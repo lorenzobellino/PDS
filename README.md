@@ -1,0 +1,3 @@
+# Programmazione di sistema
+---
+Questa è la repository per il corso di [Programmazione di Sistema](https://didattica.polito.it/pls/portal30/gap.pkg_guide.viewGap?p_cod_ins=02GRSOV&p_a_acc=2023&p_header=S&p_lang=IT&multi=N) tenuto al [Politecnico di Torino](https://www.polito.it) nell'anno accademico 2022/2023 dai professori [Gianpiero Cabodi](https://www.polito.it/en/staff?p=gianpiero.cabodi) e [Giovanni Malnati](https://www.polito.it/en/staff?p=giovanni.malnati)
