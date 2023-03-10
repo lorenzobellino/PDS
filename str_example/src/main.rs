@@ -1,5 +1,6 @@
 use clap::Parser;
 
+///simple program to greet a person a number of times
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 struct Args {
