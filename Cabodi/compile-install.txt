@@ -1,0 +1,13 @@
+/kern/compile/
+
+./configure DUMBVM
+
+/kern/compile
+
+bmake depend
+bmake
+bmake install
+
+/root/
+
+os161 kernel
