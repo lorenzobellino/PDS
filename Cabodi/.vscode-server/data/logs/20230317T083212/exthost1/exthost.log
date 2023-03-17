@@ -1,0 +1,23 @@
+2023-03-17 08:32:13.570 [info] Extension host with pid 283 started
+2023-03-17 08:32:13.588 [info] Lock '/home/os161user/.vscode-server/data/User/workspaceStorage/a52813b8bc2021d2762172460ecb2b03/vscode.lock': Lock acquired.
+2023-03-17 08:32:13.639 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2023-03-17 08:32:13.640 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2023-03-17 08:32:13.686 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2023-03-17 08:32:13.686 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2023-03-17 08:32:13.786 [info] Eager extensions activated
+2023-03-17 08:32:13.787 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2023-03-17 08:32:13.787 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2023-03-17 08:33:19.265 [info] ExtensionService#_doActivateExtension ms-vscode.cpptools, startup: false, activationEvent: 'onLanguage:c'
+2023-03-17 08:33:19.519 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:json'
+2023-03-17 08:33:19.519 [info] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:json'
+2023-03-17 08:33:19.519 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:json'
+2023-03-17 08:33:19.519 [info] ExtensionService#_doActivateExtension vscode.npm, startup: false, activationEvent: 'onLanguage:json'
+2023-03-17 08:33:19.795 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2023-03-17 08:33:24.043 [warning] DiagnosticCollection with name 'C/C++' does already exist.
+2023-03-17 08:33:32.413 [info] ExtensionService#_doActivateExtension GitHub.copilot, startup: false, activationEvent: 'onStartupFinished'
+2023-03-17 08:33:37.870 [info] ExtensionService#_doActivateExtension ms-vscode.makefile-tools, startup: false, activationEvent: 'workspaceContains:**/makefile,**/Makefile,**/GNUmakefile'
+2023-03-17 08:40:38.310 [info] ExtensionService#_doActivateExtension vscode.markdown-language-features, startup: false, activationEvent: 'onLanguage:markdown'
+2023-03-17 08:40:38.829 [info] ExtensionService#_doActivateExtension vscode.markdown-math, startup: false, activationEvent: 'api', root cause: vscode.markdown-language-features
+2023-03-17 09:36:38.399 [info] Extension host terminating: received terminate message from renderer
+2023-03-17 09:36:38.409 [info] Lock '/home/os161user/.vscode-server/data/User/workspaceStorage/a52813b8bc2021d2762172460ecb2b03/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+2023-03-17 09:36:38.617 [info] Extension host with pid 283 exiting with code 0

@@ -1,0 +1,214 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Fri Mar 17 08:33:37 2023
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# default
+.SHELLFLAGS := -c
+# environment
+VSCODE_AGENT_FOLDER = /home/os161user/.vscode-server
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /home/os161user/os161
+# makefile
+SHELL = /bin/sh
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
+# environment
+_ = /usr/bin/cat
+# makefile
+MAKEFILE_LIST := 
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+VSCODE_CWD = /home/os161user/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /home/os161user/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/bin/remote-cli:/home/os161user/os161/tools/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-9f2ec067-19ec-4110-8d0f-8fe4d25ce7d8.sock
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LS_COLORS = 
+# environment
+SSH_AUTH_SOCK = /tmp/vscode-ssh-auth-382a6c21-6601-43ec-b29b-8ac8d3f88f4c.sock
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# environment
+PWD = /home/os161user/os161
+# default
+.LOADED := 
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/os161user
+# environment
+REMOTE_CONTAINERS = true
+# environment
+MIRROR = http://www.os161.org/download/
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# automatic
++F = $(notdir $+)
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+HOSTNAME = 35c0908569c6
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+MOUNTPOINT = /home/mazzi/github_wsl/PDS/Cabodi/
+# environment
+SHLVL = 1
+# default
+MAKE_VERSION := 4.2.1
+# environment
+REMOTE_CONTAINERS_DISPLAY_SOCK = /tmp/.X11-unix/X0
+# makefile
+.DEFAULT_GOAL := 
+# environment
+MOUNTPOINT_TYPE = custom
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+REMOTE_CONTAINERS_IPC = /tmp/vscode-remote-containers-ipc-382a6c21-6601-43ec-b29b-8ac8d3f88f4c.sock
+# default
+MAKE_COMMAND := make
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+VSCODE_L10N_BUNDLE_LOCATION = 
+# environment
+BROWSER = /home/os161user/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/bin/helpers/browser.sh
+# environment
+VSCODE_HANDLES_SIGPIPE = true
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+LC_ALL = C
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+REMOTE_CONTAINERS_SOCKETS = ["/tmp/vscode-ssh-auth-382a6c21-6601-43ec-b29b-8ac8d3f88f4c.sock","/tmp/.X11-unix/X0"]
+# environment
+INSTALL_DIR = /usr/local/os161
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# default
+.RECIPEPREFIX := 
+# environment
+LANG = C
+# variable set hash-table stats:
+# Load=65/1024=6%, Rehash=0, Collisions=5/87=6%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2080, inode 12338): 6 files, no impossibilities.
+
+# 6 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GNUmakefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# files hash-table stats:
+# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 14 / storage = 113 B / avg = 8 B
+# current buf: size = 8162 B / used = 113 B / count = 14 / avg = 8 B
+
+# strcache performance: lookups = 17 / hit rate = 17%
+# hash-table stats:
+# Load=14/8192=0%, Rehash=0, Collisions=1/17=6%
+# Finished Make data base on Fri Mar 17 08:33:37 2023
+
+ 

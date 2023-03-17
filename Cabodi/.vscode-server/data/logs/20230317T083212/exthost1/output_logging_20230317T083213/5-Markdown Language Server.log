@@ -1,0 +1,9 @@
+[Trace 08:40:38.730] VsCodeClientWorkspace: TextDocument.onDidOpen: file:///home/os161user/os161/src/kern/conf/DUMBVM
+[Trace 08:40:38.731] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/DUMBVM
+[Trace 08:40:38.732] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/DUMBVM
+[Trace 08:40:38.735] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/DUMBVM
+[Trace 08:40:38.746] DocumentSymbolProvider: provideDocumentSymbols — file:///home/os161user/os161/src/kern/conf/DUMBVM 1
+[Debug 08:40:38.746] LinkProvider: compute - file:///home/os161user/os161/src/kern/conf/DUMBVM
+[Debug 08:40:38.870] TableOfContentsProvider: create - file:///home/os161user/os161/src/kern/conf/DUMBVM
+[Debug 08:40:38.941] MdFoldingProvider: provideFoldingRanges — file:///home/os161user/os161/src/kern/conf/DUMBVM 1
+[Trace 09:11:47.073] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/DUMBVM
