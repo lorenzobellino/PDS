@@ -1,0 +1,47 @@
+2023-03-17 11:27:21.070 [info] 
+
+
+
+
+2023-03-17 11:27:21.155 [info] Extension host agent started.
+2023-03-17 11:27:21.236 [debug] Removing uninstalled extensions: []
+2023-03-17 11:27:21.564 [info] [127.0.0.1][466f5d99][ManagementConnection] New connection established.
+2023-03-17 11:27:22.462 [info] [127.0.0.1][c23d5b7e][ExtensionHostConnection] New connection established.
+2023-03-17 11:27:22.474 [info] [127.0.0.1][c23d5b7e][ExtensionHostConnection] <258> Launched Extension Host Process.
+2023-03-17 11:36:31.415 [info] Getting Manifest... ms-vscode.cpptools-extension-pack
+2023-03-17 11:36:33.537 [info] Installing extension: ms-vscode.cpptools-extension-pack
+2023-03-17 11:36:37.618 [info] Getting Manifest... ms-vscode.cpptools
+2023-03-17 11:36:40.021 [info] Getting Manifest... ms-vscode.cmake-tools
+2023-03-17 11:36:42.517 [info] Getting Manifest... twxs.cmake
+2023-03-17 11:36:42.938 [info] Getting Manifest... ms-vscode.cpptools-themes
+2023-03-17 11:36:43.472 [info] Installing extension: ms-vscode.cpptools ms-vscode.cpptools-extension-pack
+2023-03-17 11:36:43.473 [info] Installing extension: ms-vscode.cmake-tools ms-vscode.cpptools-extension-pack
+2023-03-17 11:36:43.473 [info] Installing extension: twxs.cmake ms-vscode.cpptools-extension-pack
+2023-03-17 11:36:43.474 [info] Installing extension: ms-vscode.cpptools-themes ms-vscode.cpptools-extension-pack
+2023-03-17 11:37:27.653 [info] Extension signature verification: ms-vscode.cpptools-themes. Verification status: Verified.
+2023-03-17 11:37:27.769 [info] Extracted extension to /home/os161user/.vscode-server/extensions/.2d1e07f4-6ba0-486e-8675-f53ead6cf103: ms-vscode.cpptools-themes
+2023-03-17 11:37:27.783 [info] Renamed to /home/os161user/.vscode-server/extensions/ms-vscode.cpptools-themes-2.0.0
+2023-03-17 11:37:27.788 [info] Extracting extension completed. ms-vscode.cpptools-themes
+2023-03-17 11:37:29.340 [info] Extension signature verification: ms-vscode.cmake-tools. Verification status: Verified.
+2023-03-17 11:37:29.757 [info] Extracted extension to /home/os161user/.vscode-server/extensions/.490b18ff-9d1d-4ca8-b40d-be27b6ad4217: ms-vscode.cmake-tools
+2023-03-17 11:37:29.770 [info] Renamed to /home/os161user/.vscode-server/extensions/ms-vscode.cmake-tools-1.13.45
+2023-03-17 11:37:29.780 [info] Extracting extension completed. ms-vscode.cmake-tools
+2023-03-17 11:37:42.637 [info] Extension signature verification: twxs.cmake. Verification status: Verified.
+2023-03-17 11:37:43.025 [info] Extracted extension to /home/os161user/.vscode-server/extensions/.a3997c4c-c0d9-4d36-add6-2f1728095ae8: twxs.cmake
+2023-03-17 11:37:43.035 [info] Renamed to /home/os161user/.vscode-server/extensions/twxs.cmake-0.0.17
+2023-03-17 11:37:43.037 [info] Extracting extension completed. twxs.cmake
+2023-03-17 11:39:33.432 [info] Extension signature verification: ms-vscode.cpptools. Verification status: Verified.
+2023-03-17 11:39:38.595 [info] Extracted extension to /home/os161user/.vscode-server/extensions/.134ac62d-6190-494f-ac58-04a3e6036cc3: ms-vscode.cpptools
+2023-03-17 11:39:38.607 [info] Renamed to /home/os161user/.vscode-server/extensions/ms-vscode.cpptools-1.14.4-linux-x64
+2023-03-17 11:39:38.623 [info] Extracting extension completed. ms-vscode.cpptools
+2023-03-17 11:39:40.271 [info] Extension signature verification: ms-vscode.cpptools-extension-pack. Verification status: Verified.
+2023-03-17 11:39:40.302 [info] Extracted extension to /home/os161user/.vscode-server/extensions/.70dc5816-460a-42a1-ae4b-ca4c5ad9e780: ms-vscode.cpptools-extension-pack
+2023-03-17 11:39:40.313 [info] Renamed to /home/os161user/.vscode-server/extensions/ms-vscode.cpptools-extension-pack-1.3.0
+2023-03-17 11:39:40.315 [info] Extracting extension completed. ms-vscode.cpptools-extension-pack
+2023-03-17 11:39:40.325 [info] Extension installed successfully: ms-vscode.cpptools-themes
+2023-03-17 11:39:40.325 [info] Extension installed successfully: ms-vscode.cmake-tools
+2023-03-17 11:39:40.325 [info] Extension installed successfully: twxs.cmake
+2023-03-17 11:39:40.325 [info] Extension installed successfully: ms-vscode.cpptools
+2023-03-17 11:39:40.325 [info] Extension installed successfully: ms-vscode.cpptools-extension-pack
+2023-03-17 11:47:05.310 [info] [127.0.0.1][466f5d99][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2023-03-17 11:47:05.752 [info] [127.0.0.1][c23d5b7e][ExtensionHostConnection] <258> Extension Host Process exited with code: 0, signal: null.

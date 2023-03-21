@@ -1,0 +1,12 @@
+2023-03-17 12:00:27.740 [info] 
+
+
+
+
+2023-03-17 12:00:27.795 [info] Extension host agent started.
+2023-03-17 12:00:27.876 [debug] Removing uninstalled extensions: []
+2023-03-17 12:00:28.291 [info] [127.0.0.1][3cdfe1db][ManagementConnection] New connection established.
+2023-03-17 12:00:28.942 [info] [127.0.0.1][6cd58307][ExtensionHostConnection] New connection established.
+2023-03-17 12:00:28.968 [info] [127.0.0.1][6cd58307][ExtensionHostConnection] <258> Launched Extension Host Process.
+2023-03-17 12:10:02.637 [info] [127.0.0.1][3cdfe1db][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2023-03-17 12:10:02.807 [info] [127.0.0.1][6cd58307][ExtensionHostConnection] <258> Extension Host Process exited with code: 0, signal: null.

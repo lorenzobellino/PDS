@@ -1,0 +1,111 @@
+[Trace 11:39:29.384] VsCodeClientWorkspace: TextDocument.onDidOpen: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:29.386] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:29.388] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:29.393] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:29.413] DocumentSymbolProvider: provideDocumentSymbols — file:///home/os161user/os161/src/kern/conf/HELLO 1
+[Debug 11:39:29.414] LinkProvider: compute - file:///home/os161user/os161/src/kern/conf/HELLO
+[Debug 11:39:29.649] TableOfContentsProvider: create - file:///home/os161user/os161/src/kern/conf/HELLO
+[Debug 11:39:30.907] MdFoldingProvider: provideFoldingRanges — file:///home/os161user/os161/src/kern/conf/HELLO 1
+[Trace 11:39:34.107] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:34.109] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Debug 11:39:34.312] MdFoldingProvider: provideFoldingRanges — file:///home/os161user/os161/src/kern/conf/HELLO 2
+[Debug 11:39:34.313] TableOfContentsProvider: create - file:///home/os161user/os161/src/kern/conf/HELLO
+[Debug 11:39:34.353] LinkProvider: compute - file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:34.468] DocumentSymbolProvider: provideDocumentSymbols — file:///home/os161user/os161/src/kern/conf/HELLO 2
+[Trace 11:39:34.551] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:34.552] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Debug 11:39:34.760] MdFoldingProvider: provideFoldingRanges — file:///home/os161user/os161/src/kern/conf/HELLO 3
+[Debug 11:39:34.760] TableOfContentsProvider: create - file:///home/os161user/os161/src/kern/conf/HELLO
+[Debug 11:39:34.808] LinkProvider: compute - file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:34.904] DocumentSymbolProvider: provideDocumentSymbols — file:///home/os161user/os161/src/kern/conf/HELLO 3
+[Trace 11:39:35.051] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:35.051] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:35.235] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:35.235] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:35.290] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:35.290] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Debug 11:39:35.459] MdFoldingProvider: provideFoldingRanges — file:///home/os161user/os161/src/kern/conf/HELLO 6
+[Debug 11:39:35.460] TableOfContentsProvider: create - file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:35.485] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:35.485] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Debug 11:39:35.693] MdFoldingProvider: provideFoldingRanges — file:///home/os161user/os161/src/kern/conf/HELLO 7
+[Debug 11:39:35.693] TableOfContentsProvider: create - file:///home/os161user/os161/src/kern/conf/HELLO
+[Debug 11:39:35.744] LinkProvider: compute - file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:35.846] DocumentSymbolProvider: provideDocumentSymbols — file:///home/os161user/os161/src/kern/conf/HELLO 7
+[Trace 11:39:35.916] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:35.916] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:36.060] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:36.060] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:36.208] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:36.208] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:36.347] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:36.347] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:36.497] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:36.497] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Debug 11:39:36.709] MdFoldingProvider: provideFoldingRanges — file:///home/os161user/os161/src/kern/conf/HELLO 12
+[Debug 11:39:36.709] TableOfContentsProvider: create - file:///home/os161user/os161/src/kern/conf/HELLO
+[Debug 11:39:36.758] LinkProvider: compute - file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:36.860] DocumentSymbolProvider: provideDocumentSymbols — file:///home/os161user/os161/src/kern/conf/HELLO 12
+[Trace 11:39:36.942] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:36.942] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Debug 11:39:37.145] MdFoldingProvider: provideFoldingRanges — file:///home/os161user/os161/src/kern/conf/HELLO 13
+[Debug 11:39:37.145] TableOfContentsProvider: create - file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:37.300] DocumentSymbolProvider: provideDocumentSymbols — file:///home/os161user/os161/src/kern/conf/HELLO 13
+[Debug 11:39:37.300] LinkProvider: compute - file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:37.425] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:37.426] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Debug 11:39:37.644] MdFoldingProvider: provideFoldingRanges — file:///home/os161user/os161/src/kern/conf/HELLO 14
+[Debug 11:39:37.644] TableOfContentsProvider: create - file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:37.645] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:37.645] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Debug 11:39:37.845] MdFoldingProvider: provideFoldingRanges — file:///home/os161user/os161/src/kern/conf/HELLO 15
+[Debug 11:39:37.845] TableOfContentsProvider: create - file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:37.995] DocumentSymbolProvider: provideDocumentSymbols — file:///home/os161user/os161/src/kern/conf/HELLO 15
+[Debug 11:39:37.995] LinkProvider: compute - file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:38.796] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:38.797] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:38.940] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:38.940] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Debug 11:39:39.155] MdFoldingProvider: provideFoldingRanges — file:///home/os161user/os161/src/kern/conf/HELLO 17
+[Debug 11:39:39.155] TableOfContentsProvider: create - file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:39.198] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Debug 11:39:39.199] LinkProvider: compute - file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:39.199] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:39.327] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:39.327] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:39.390] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:39.390] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:39.572] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:39.572] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:39.753] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:39.753] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Debug 11:39:39.956] MdFoldingProvider: provideFoldingRanges — file:///home/os161user/os161/src/kern/conf/HELLO 22
+[Debug 11:39:39.956] TableOfContentsProvider: create - file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:39.974] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:39.974] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Debug 11:39:40.181] MdFoldingProvider: provideFoldingRanges — file:///home/os161user/os161/src/kern/conf/HELLO 23
+[Debug 11:39:40.181] TableOfContentsProvider: create - file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:40.331] DocumentSymbolProvider: provideDocumentSymbols — file:///home/os161user/os161/src/kern/conf/HELLO 23
+[Debug 11:39:40.331] LinkProvider: compute - file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:40.779] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:40.780] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:41.142] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:41.143] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:41.143] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:41.236] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:41.243] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:41.243] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:41.719] VsCodeClientWorkspace: TextDocument.onDidChanceContent: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:41.719] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Debug 11:39:41.721] MdFoldingProvider: provideFoldingRanges — file:///home/os161user/os161/src/kern/conf/HELLO 28
+[Debug 11:39:41.721] TableOfContentsProvider: create - file:///home/os161user/os161/src/kern/conf/HELLO
+[Debug 11:39:41.721] LinkProvider: compute - file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:39:41.862] DocumentSymbolProvider: provideDocumentSymbols — file:///home/os161user/os161/src/kern/conf/HELLO 28
+[Trace 11:39:41.863] DocumentSymbolProvider: provideDocumentSymbols — file:///home/os161user/os161/src/kern/conf/HELLO 28
+[Trace 11:39:42.123] DocumentSymbolProvider: provideDocumentSymbols — file:///home/os161user/os161/src/kern/conf/HELLO 28
+[Debug 11:39:42.312] MdFoldingProvider: provideFoldingRanges — file:///home/os161user/os161/src/kern/conf/HELLO 28
+[Debug 11:39:42.638] MdFoldingProvider: provideFoldingRanges — file:///home/os161user/os161/src/kern/conf/HELLO 28
+[Trace 11:40:06.617] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:40:41.609] VsCodeClientWorkspace: TextDocument.onDidClose: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:40:41.609] VsCodeClientWorkspace: deleteDocument: file:///home/os161user/os161/src/kern/conf/HELLO
+[Trace 11:40:41.611] Server: connection.languages.diagnostics.on: file:///home/os161user/os161/src/kern/conf/HELLO
