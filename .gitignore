@@ -1,3 +1,5 @@
+#zoneidentifier
+*.Identifier
 # vs code 
 .vscode
 ### Rust ###
