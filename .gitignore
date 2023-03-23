@@ -17,3 +17,18 @@ Cargo.lock
 
 # MSVC Windows builds of rustc generate these, which store debugging information
 *.pdb
+
+#rustlings
+*.swp
+Malnati/rustlings/target/
+**/*.rs.bk
+.DS_Store
+*.pdb
+Malnati/rustlings/exercises/clippy/Cargo.toml
+Malnati/rustlings/exercises/clippy/Cargo.lock
+rust-project.json
+.idea
+.vscode/*
+!.vscode/extensions.json
+*.iml
+*.o
