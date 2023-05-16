@@ -17,4 +17,12 @@ Cargo.lock
 
 # MSVC Windows builds of rustc generate these, which store debugging information
 *.pdb
+
+# malnati
 Malnati/rustlings
+Malnati/soluzioni\ lab
+
+
+# cabodi
+
+Cabodi/os161
