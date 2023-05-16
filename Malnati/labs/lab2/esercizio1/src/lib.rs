@@ -60,6 +60,8 @@ impl RingBuf {
         })
         .unwrap() as usize;
 
+        // println!("vsize {}", vsize);
+
         let mut buf = RingBuf { file, size, vsize };
 
         if !exists {
@@ -83,15 +85,6 @@ impl RingBuf {
         }
         buf
     }
-
-    // fn run_inlock<T>(&mut self, f: impl FnOnce(&mut Self) -> T) -> T {
-    //     while !lock_file(&self.get_fd(), None, Some(FcntlLockType::Write)).unwrap() {
-    //         sleep(Duration::from_millis(1));
-    //     }
-    //     let res = f(self);
-    //     unlock_file(&self.get_fd(), None).unwrap();
-    //     res
-    // }
 
     fn run_inlock<T>(&mut self, f: impl FnOnce(&mut Self) -> T) -> T {
         while !lock_file(&self.get_fd(), None, Some(FcntlLockType::Write)).unwrap() {
@@ -121,6 +114,7 @@ impl RingBuf {
     fn save_header(&mut self, header: Header) {
         let mut buf = [0; HEADER_SIZE];
         buf[0..S_SIZE].copy_from_slice(&header.read_offset.to_le_bytes());
+        buf[S_SIZE..2 * S_SIZE].copy_from_slice(&header.write_offset.to_le_bytes());
         buf[HEADER_SIZE - 1] = match header.full {
             false => 0,
             true => 1,
@@ -131,11 +125,11 @@ impl RingBuf {
     }
 
     pub fn read(&mut self) -> Option<SensorData> {
-        self.run_inlock(|this| this.read())
+        self.run_inlock(|this| this._read())
     }
 
     pub fn write(&mut self, val: SensorData) -> Option<()> {
-        self.run_inlock(|this| this.write(val))
+        self.run_inlock(|this| this._write(val))
     }
 
     fn _read(&mut self) -> Option<SensorData> {
@@ -165,6 +159,8 @@ impl RingBuf {
         if header.write_offset == header.read_offset {
             header.full = true;
         }
+        println!("write offset new {}", header.write_offset);
+        println!("read offset new {}", header.read_offset);
         self.save_header(header);
         Some(())
     }
@@ -174,7 +170,12 @@ impl RingBuf {
             .seek(SeekFrom::Start((HEADER_SIZE + idx * self.vsize) as u64))
             .unwrap();
         let mut buf = vec![0; self.vsize];
-        println! {"buf len {} offset {} idx {}", buf.len(), (HEADER_SIZE+idx*self.vsize),idx };
+        println! {
+            "buf len {} offset {} idx {}",
+            buf.len(),
+            (HEADER_SIZE+idx*self.vsize),
+            idx
+        };
 
         self.file.read_exact(&mut buf).unwrap();
         bincode::deserialize(&buf).unwrap()
