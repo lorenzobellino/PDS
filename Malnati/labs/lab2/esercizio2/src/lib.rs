@@ -231,10 +231,28 @@ impl Filesystem {
             None => None,
         }
     }
-
-    // pub fn get_file(path: &str) -> Option<File> {
-    //     todo!("Implement this function");
-    // }
+    pub fn get_file(&mut self, path: &str) -> Option<&mut File> {
+        let filename = path.split("/").last().unwrap();
+        let basepath = path
+            .split("/")
+            .take_while(|x| *x != filename)
+            .collect::<Vec<&str>>()
+            .join("/");
+        let parent = self.find_dir(&basepath);
+        match parent {
+            Some(x) => {
+                let f = x.children.iter_mut().find(|x| match x {
+                    Node::File(x) => x.name == *filename,
+                    _ => false,
+                });
+                match f {
+                    Some(Node::File(ref mut x)) => Some(x),
+                    _ => None,
+                }
+            }
+            None => None,
+        }
+    }
 
     // pub fn search(&self, query: &str) -> Vec<&Node> {
     //     todo!("Implement this function");
@@ -340,5 +358,29 @@ mod tests {
         fs.new_file("/a/test.txt", file);
         let dir2 = fs.rm_file("/a/test.txt");
         assert!(dir2.is_some());
+    }
+
+    #[test]
+    fn get_file() {
+        let filename = "test.txt";
+        let content = vec![1, 2, 3, 4];
+        let type_ = FileType::Text;
+        let file = File::new(filename, content, type_);
+        let mut fs = Filesystem::from_dir("/a").unwrap();
+        fs.new_file("/a/test.txt", file);
+        let d = fs.get_file("/a/test.txt");
+        assert!(d.is_some());
+    }
+
+    #[test]
+    fn get_invalid_file() {
+        let filename = "test.txt";
+        let content = vec![1, 2, 3, 4];
+        let type_ = FileType::Text;
+        let file = File::new(filename, content, type_);
+        let mut fs = Filesystem::from_dir("/a").unwrap();
+        fs.new_file("/a/test.txt", file);
+        let d = fs.get_file("/a/invalid.txt");
+        assert!(d.is_none());
     }
 }
