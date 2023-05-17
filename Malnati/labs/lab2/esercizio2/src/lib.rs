@@ -254,15 +254,87 @@ impl Filesystem {
         }
     }
 
-    // pub fn search(&self, query: &str) -> Vec<&Node> {
-    //     todo!("Implement this function");
-    // }
+    fn do_match<'a>(f: &File, query: &'a [&'a str]) -> Option<Vec<&'a str>> {
+        let mut matched = vec![];
+        for q in query {
+            let toks = q.split(":").collect::<Vec<&str>>();
+            let qtype = toks[0];
+            let qval = toks[1];
+            match qtype {
+                "name" => {
+                    if f.name.contains(qval) {
+                        matched.push(*q);
+                    }
+                }
+                "contents" => {
+                    if String::from_utf8_lossy(&f.content).contains(qval) {
+                        matched.push(*q);
+                    }
+                }
+                "larger" => {
+                    let qval = qval.parse::<usize>().unwrap();
+                    if f.content.len() > qval {
+                        matched.push(*q);
+                    }
+                }
+                "smaller" => {
+                    let qval = qval.parse::<usize>().unwrap();
+                    if f.content.len() < qval {
+                        matched.push(*q);
+                    }
+                }
+                "newer" => {
+                    let qval = qval.parse::<u64>().unwrap();
+                    if f.creation_time > qval {
+                        matched.push(*q);
+                    }
+                }
+                "older" => {
+                    let qval = qval.parse::<u64>().unwrap();
+                    if f.creation_time < qval {
+                        matched.push(*q);
+                    }
+                }
+                _ => println!("invalid query"),
+            }
+        }
+        if matched.len() == 0 {
+            return None;
+        }
+        Some(matched)
+    }
+
+    pub fn search<'a>(&'a mut self, query: &'a [&'a str]) -> Option<MatchResult> {
+        let mut mr = MatchResult {
+            qs: vec![],
+            matched_nodes: vec![],
+        };
+        let mut visits = vec![&mut self.root];
+        while let Some(d) = visits.pop() {
+            for cc in d.children.iter_mut() {
+                match cc {
+                    Node::Dir(ref mut x) => {
+                        visits.push(x);
+                    }
+                    Node::File(ref mut x) => {
+                        if let Some(matches) = Filesystem::do_match(x, query) {
+                            for m in matches {
+                                if !mr.qs.contains(&m) {
+                                    mr.qs.push(m);
+                                }
+                            }
+                            mr.matched_nodes.push(cc);
+                        }
+                    }
+                }
+            }
+        }
+        Some(mr)
+    }
 }
 
 #[cfg(test)]
 mod tests {
-
-    // use std::fs;
 
     use super::*;
     #[test]
@@ -327,7 +399,7 @@ mod tests {
     #[test]
     fn create_file() {
         let filename = "test.txt";
-        let content = vec![1, 2, 3, 4];
+        let content = "test file content".into();
         let type_ = FileType::Text;
         let file = File::new(filename, content, type_);
         let mut fs = Filesystem::new();
@@ -340,7 +412,7 @@ mod tests {
     #[test]
     fn create_file_invalid_path() {
         let filename = "test.txt";
-        let content = vec![1, 2, 3, 4];
+        let content = "test file content".into();
         let type_ = FileType::Text;
         let file = File::new(filename, content, type_);
         let mut fs = Filesystem::from_dir("/a");
@@ -351,7 +423,7 @@ mod tests {
     #[test]
     fn delete_file() {
         let filename = "test.txt";
-        let content = vec![1, 2, 3, 4];
+        let content = "test file content".into();
         let type_ = FileType::Text;
         let file = File::new(filename, content, type_);
         let mut fs = Filesystem::from_dir("/a").unwrap();
@@ -363,7 +435,7 @@ mod tests {
     #[test]
     fn get_file() {
         let filename = "test.txt";
-        let content = vec![1, 2, 3, 4];
+        let content = "test file content".into();
         let type_ = FileType::Text;
         let file = File::new(filename, content, type_);
         let mut fs = Filesystem::from_dir("/a").unwrap();
@@ -375,7 +447,7 @@ mod tests {
     #[test]
     fn get_invalid_file() {
         let filename = "test.txt";
-        let content = vec![1, 2, 3, 4];
+        let content = "test file content".into();
         let type_ = FileType::Text;
         let file = File::new(filename, content, type_);
         let mut fs = Filesystem::from_dir("/a").unwrap();
