@@ -107,13 +107,11 @@ impl Filesystem {
         let mut cdir = &mut fs.root;
         let dirs = path.split("/").collect::<Vec<&str>>();
         for d in dirs.iter() {
-            // println!("d: {}", d);
             if *d == "" {
                 continue;
             }
             let new_dir = Dir::new(d);
             cdir.children.push(Node::Dir(new_dir));
-            // println!("ls {} - {:?}", cdir.name, cdir.ls());
             let n = cdir.children.iter_mut().find(|x| match x {
                 Node::Dir(x) => x.name == *d,
                 _ => false,
@@ -169,9 +167,6 @@ impl Filesystem {
             }
             None => None,
         }
-        // let mut new_dir = Dir::new(dirname);
-        // parent.children.push(Node::Dir(new_dir));
-        // Some(parent)
     }
 
     pub fn rm_dir(&mut self, path: &str) -> Option<&mut Dir> {
@@ -202,7 +197,7 @@ impl Filesystem {
             .collect::<Vec<&str>>()
             .join("/");
         let parent = self.find_dir(&basepath);
-        println!("parent: {:?}", parent);
+        // println!("parent: {:?}", parent);
         match parent {
             Some(x) => {
                 x.children.push(Node::File(file));
@@ -266,7 +261,7 @@ impl Filesystem {
                         matched.push(*q);
                     }
                 }
-                "contents" => {
+                "content" => {
                     if String::from_utf8_lossy(&f.content).contains(qval) {
                         matched.push(*q);
                     }
