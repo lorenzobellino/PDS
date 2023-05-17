@@ -126,9 +126,6 @@ impl Filesystem {
                 _ => return None,
             }
         }
-
-        // println!("ls fs - {:?}", fs.ls_dir("/"));
-
         Some(fs)
     }
 
@@ -177,7 +174,7 @@ impl Filesystem {
         // Some(parent)
     }
 
-    pub fn rm_dir(&mut self, path: &str) -> Option<Dir> {
+    pub fn rm_dir(&mut self, path: &str) -> Option<&mut Dir> {
         let dirname = path.split("/").last().unwrap();
         let basepath = path
             .split("/")
@@ -191,19 +188,49 @@ impl Filesystem {
                     Node::Dir(x) => x.name != *dirname,
                     _ => true,
                 });
+                Some(x)
             }
-            None => return None,
+            None => None,
         }
-        None
     }
 
-    // pub fn new_file(path: &str, file: File) -> bool {
-    //     todo!("Implement this function");
-    // }
+    pub fn new_file(&mut self, path: &str, file: File) -> Option<&mut Dir> {
+        let filename = path.split("/").last().unwrap();
+        let basepath = path
+            .split("/")
+            .take_while(|x| *x != filename)
+            .collect::<Vec<&str>>()
+            .join("/");
+        let parent = self.find_dir(&basepath);
+        println!("parent: {:?}", parent);
+        match parent {
+            Some(x) => {
+                x.children.push(Node::File(file));
+                Some(x)
+            }
+            None => None,
+        }
+    }
 
-    // pub fn rm_file(path: &str) -> bool {
-    //     todo!("Implement this function");
-    // }
+    pub fn rm_file(&mut self, path: &str) -> Option<&mut Dir> {
+        let filename = path.split("/").last().unwrap();
+        let basepath = path
+            .split("/")
+            .take_while(|x| *x != filename)
+            .collect::<Vec<&str>>()
+            .join("/");
+        let parent = self.find_dir(&basepath);
+        match parent {
+            Some(x) => {
+                x.children.retain(|x| match x {
+                    Node::File(x) => x.name != *filename,
+                    _ => true,
+                });
+                Some(x)
+            }
+            None => None,
+        }
+    }
 
     // pub fn get_file(path: &str) -> Option<File> {
     //     todo!("Implement this function");
@@ -242,11 +269,13 @@ mod tests {
         let dir = fs.mk_dir("/a");
         assert!(dir.is_some());
         assert_eq!(dir.as_ref().unwrap().name, "/");
-        // if let Node::Dir(ref d) = fs.root.children[0] {
-        //     assert_eq!(d.name, "a");
-        // } else {
-        //     assert!(false, "expected dir");
-        // }
+    }
+
+    #[test]
+    fn delete_dir() {
+        let mut fs = Filesystem::from_dir("/a/b").unwrap();
+        let dir = fs.rm_dir("/a/b");
+        assert!(dir.is_some());
     }
 
     #[test]
@@ -277,8 +306,39 @@ mod tests {
         assert!(d.is_none());
     }
 
-    // #[test]
-    // fn create_fs_from_dir() {
-    //     let fs = Filesystem::from_dir("./test_dirr");
-    // }
+    #[test]
+    fn create_file() {
+        let filename = "test.txt";
+        let content = vec![1, 2, 3, 4];
+        let type_ = FileType::Text;
+        let file = File::new(filename, content, type_);
+        let mut fs = Filesystem::new();
+        let dir = fs.mk_dir("/a");
+        assert!(dir.is_some());
+        let dir2 = fs.new_file("/a/test.txt", file);
+        assert!(dir2.is_some());
+    }
+
+    #[test]
+    fn create_file_invalid_path() {
+        let filename = "test.txt";
+        let content = vec![1, 2, 3, 4];
+        let type_ = FileType::Text;
+        let file = File::new(filename, content, type_);
+        let mut fs = Filesystem::from_dir("/a");
+        let dir = fs.as_mut().unwrap().new_file("/a/test.txt", file);
+        assert!(dir.is_some());
+    }
+
+    #[test]
+    fn delete_file() {
+        let filename = "test.txt";
+        let content = vec![1, 2, 3, 4];
+        let type_ = FileType::Text;
+        let file = File::new(filename, content, type_);
+        let mut fs = Filesystem::from_dir("/a").unwrap();
+        fs.new_file("/a/test.txt", file);
+        let dir2 = fs.rm_file("/a/test.txt");
+        assert!(dir2.is_some());
+    }
 }
