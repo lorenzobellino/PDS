@@ -1,7 +1,8 @@
 #[cfg(test)]
 mod tests {
-
     use esercizio2::*;
+    use std::thread::sleep;
+    use std::time::{SystemTime, UNIX_EPOCH};
 
     #[test]
     fn create_empty_fs() {
@@ -323,5 +324,246 @@ mod tests {
         }
         names.sort();
         assert_eq!(names, vec!["test2.txt"]);
+    }
+
+    #[test]
+    fn match_dimension_smaller_1000() {
+        let mut fs = Filesystem::from_dir("/a/b/c").unwrap();
+        fs.mk_dir("/a/b/d");
+        fs.mk_dir("/a/k");
+        let file1 = File::new("test1.txt", "small".into(), FileType::Text);
+        let file2 = File::new("test2.txt", "really really really really really really really really really really really really really long long long long long long long long file !!!!!".into(), FileType::Text);
+        let file3 = File::new("test3.txt", "normal size file".into(), FileType::Text);
+        fs.new_file("/a/b/test1.txt", file1);
+        fs.new_file("/a/test2.txt", file2);
+        fs.new_file("/a/k/test3.txt", file3);
+        let q1 = ["smaller:1000"];
+        let matches = fs.search(&q1).unwrap();
+        assert_eq!(matches.matched_nodes.len(), 3);
+        let mut names = vec![];
+        for i in matches.matched_nodes {
+            match i {
+                Node::File(f) => names.push(f.name.as_str()),
+                _ => (),
+            }
+        }
+        names.sort();
+        assert_eq!(names, vec!["test1.txt", "test2.txt", "test3.txt"]);
+    }
+
+    #[test]
+    fn match_dimension_smaller_70() {
+        let mut fs = Filesystem::from_dir("/a/b/c").unwrap();
+        fs.mk_dir("/a/b/d");
+        fs.mk_dir("/a/k");
+        let file1 = File::new("test1.txt", "small".into(), FileType::Text);
+        let file2 = File::new("test2.txt", "really really really really really really really really really really really really really long long long long long long long long file !!!!!".into(), FileType::Text);
+        let file3 = File::new("test3.txt", "normal size file".into(), FileType::Text);
+        fs.new_file("/a/b/test1.txt", file1);
+        fs.new_file("/a/test2.txt", file2);
+        fs.new_file("/a/k/test3.txt", file3);
+        let q1 = ["smaller:70"];
+        let matches = fs.search(&q1).unwrap();
+        assert_eq!(matches.matched_nodes.len(), 2);
+        let mut names = vec![];
+        for i in matches.matched_nodes {
+            match i {
+                Node::File(f) => names.push(f.name.as_str()),
+                _ => (),
+            }
+        }
+        names.sort();
+        assert_eq!(names, vec!["test1.txt", "test3.txt"]);
+    }
+    #[test]
+    fn match_dimension_smaller_0() {
+        let mut fs = Filesystem::from_dir("/a/b/c").unwrap();
+        fs.mk_dir("/a/b/d");
+        fs.mk_dir("/a/k");
+        let file1 = File::new("test1.txt", "small".into(), FileType::Text);
+        let file2 = File::new("test2.txt", "really really really really really really really really really really really really really long long long long long long long long file !!!!!".into(), FileType::Text);
+        let file3 = File::new("test3.txt", "normal size file".into(), FileType::Text);
+        fs.new_file("/a/b/test1.txt", file1);
+        fs.new_file("/a/test2.txt", file2);
+        fs.new_file("/a/k/test3.txt", file3);
+        let q1 = ["smaller:0"];
+        let matches = fs.search(&q1).unwrap();
+        assert_eq!(matches.matched_nodes.len(), 0);
+    }
+
+    #[test]
+    fn match_newer_3() {
+        let sleeptime = std::time::Duration::from_secs(1);
+
+        let _t = SystemTime::now()
+            .duration_since(UNIX_EPOCH)
+            .unwrap()
+            .as_secs();
+
+        sleep(sleeptime);
+
+        let mut fs = Filesystem::from_dir("/a/b/c").unwrap();
+        fs.mk_dir("/a/b/d");
+        fs.mk_dir("/a/k");
+        let file1 = File::new("test1.txt", "small".into(), FileType::Text);
+        let file2 = File::new("test2.txt", "really really really really really really really really really really really really really long long long long long long long long file !!!!!".into(), FileType::Text);
+        let file3 = File::new("test3.txt", "normal size file".into(), FileType::Text);
+        fs.new_file("/a/b/test1.txt", file1);
+        fs.new_file("/a/test2.txt", file2);
+        fs.new_file("/a/k/test3.txt", file3);
+
+        let q = vec![format!("newer:{}", _t)];
+        let q_str: Vec<&str> = q.iter().map(|s| s.as_str()).collect();
+
+        let matches = fs.search(&q_str).unwrap();
+
+        assert_eq!(matches.matched_nodes.len(), 3);
+    }
+
+    #[test]
+    fn match_newer_0() {
+        let sleeptime = std::time::Duration::from_secs(1);
+
+        let mut fs = Filesystem::from_dir("/a/b/c").unwrap();
+        fs.mk_dir("/a/b/d");
+        fs.mk_dir("/a/k");
+        let file1 = File::new("test1.txt", "small".into(), FileType::Text);
+        let file2 = File::new("test2.txt", "really really really really really really really really really really really really really long long long long long long long long file !!!!!".into(), FileType::Text);
+        let file3 = File::new("test3.txt", "normal size file".into(), FileType::Text);
+        fs.new_file("/a/b/test1.txt", file1);
+        fs.new_file("/a/test2.txt", file2);
+        fs.new_file("/a/k/test3.txt", file3);
+
+        sleep(sleeptime);
+
+        let _t = SystemTime::now()
+            .duration_since(UNIX_EPOCH)
+            .unwrap()
+            .as_secs();
+
+        let q = vec![format!("newer:{}", _t)];
+        let q_str: Vec<&str> = q.iter().map(|s| s.as_str()).collect();
+
+        let matches = fs.search(&q_str).unwrap();
+
+        assert_eq!(matches.matched_nodes.len(), 0);
+    }
+
+    #[test]
+    fn match_newer_1() {
+        let sleeptime = std::time::Duration::from_secs(1);
+
+        let mut fs = Filesystem::from_dir("/a/b/c").unwrap();
+        fs.mk_dir("/a/b/d");
+        fs.mk_dir("/a/k");
+        let file1 = File::new("test1.txt", "small".into(), FileType::Text);
+        let file2 = File::new("test2.txt", "really really really really really really really really really really really really really long long long long long long long long file !!!!!".into(), FileType::Text);
+        fs.new_file("/a/b/test1.txt", file1);
+        fs.new_file("/a/test2.txt", file2);
+
+        let _t = SystemTime::now()
+            .duration_since(UNIX_EPOCH)
+            .unwrap()
+            .as_secs();
+
+        sleep(sleeptime);
+
+        let file3 = File::new("test3.txt", "normal size file".into(), FileType::Text);
+        fs.new_file("/a/k/test3.txt", file3);
+
+        let q = vec![format!("newer:{}", _t)];
+        let q_str: Vec<&str> = q.iter().map(|s| s.as_str()).collect();
+
+        let matches = fs.search(&q_str).unwrap();
+
+        assert_eq!(matches.matched_nodes.len(), 1);
+    }
+
+    #[test]
+    fn match_older_0() {
+        let sleeptime = std::time::Duration::from_secs(1);
+        let _t = SystemTime::now()
+            .duration_since(UNIX_EPOCH)
+            .unwrap()
+            .as_secs();
+        sleep(sleeptime);
+
+        let mut fs = Filesystem::from_dir("/a/b/c").unwrap();
+        fs.mk_dir("/a/b/d");
+        fs.mk_dir("/a/k");
+        let file1 = File::new("test1.txt", "small".into(), FileType::Text);
+        let file2 = File::new("test2.txt", "really really really really really really really really really really really really really long long long long long long long long file !!!!!".into(), FileType::Text);
+        let file3 = File::new("test3.txt", "normal size file".into(), FileType::Text);
+        fs.new_file("/a/b/test1.txt", file1);
+        fs.new_file("/a/test2.txt", file2);
+        fs.new_file("/a/k/test3.txt", file3);
+
+        let q = vec![format!("older:{}", _t)];
+        let q_str: Vec<&str> = q.iter().map(|s| s.as_str()).collect();
+
+        let matches = fs.search(&q_str).unwrap();
+
+        assert_eq!(matches.matched_nodes.len(), 0);
+    }
+
+    #[test]
+    fn match_older_3() {
+        let sleeptime = std::time::Duration::from_secs(1);
+
+        let mut fs = Filesystem::from_dir("/a/b/c").unwrap();
+        fs.mk_dir("/a/b/d");
+        fs.mk_dir("/a/k");
+        let file1 = File::new("test1.txt", "small".into(), FileType::Text);
+        let file2 = File::new("test2.txt", "really really really really really really really really really really really really really long long long long long long long long file !!!!!".into(), FileType::Text);
+        let file3 = File::new("test3.txt", "normal size file".into(), FileType::Text);
+        fs.new_file("/a/b/test1.txt", file1);
+        fs.new_file("/a/test2.txt", file2);
+        fs.new_file("/a/k/test3.txt", file3);
+
+        sleep(sleeptime);
+
+        let _t = SystemTime::now()
+            .duration_since(UNIX_EPOCH)
+            .unwrap()
+            .as_secs();
+
+        let q = vec![format!("older:{}", _t)];
+        let q_str: Vec<&str> = q.iter().map(|s| s.as_str()).collect();
+
+        let matches = fs.search(&q_str).unwrap();
+
+        assert_eq!(matches.matched_nodes.len(), 3);
+    }
+
+    #[test]
+    fn match_older_2() {
+        let sleeptime = std::time::Duration::from_secs(1);
+
+        let mut fs = Filesystem::from_dir("/a/b/c").unwrap();
+        fs.mk_dir("/a/b/d");
+        fs.mk_dir("/a/k");
+        let file1 = File::new("test1.txt", "small".into(), FileType::Text);
+        let file2 = File::new("test2.txt", "really really really really really really really really really really really really really long long long long long long long long file !!!!!".into(), FileType::Text);
+        fs.new_file("/a/b/test1.txt", file1);
+        fs.new_file("/a/test2.txt", file2);
+
+        sleep(sleeptime);
+
+        let _t = SystemTime::now()
+            .duration_since(UNIX_EPOCH)
+            .unwrap()
+            .as_secs();
+
+        sleep(sleeptime);
+
+        let file3 = File::new("test3.txt", "normal size file".into(), FileType::Text);
+        fs.new_file("/a/k/test3.txt", file3);
+
+        let q = vec![format!("older:{}", _t)];
+        let q_str: Vec<&str> = q.iter().map(|s| s.as_str()).collect();
+
+        let matches = fs.search(&q_str).unwrap();
+
+        assert_eq!(matches.matched_nodes.len(), 2);
     }
 }

@@ -280,6 +280,7 @@ impl Filesystem {
                 }
                 "newer" => {
                     let qval = qval.parse::<u64>().unwrap();
+                    println!("{:?} --- {:?}", f.creation_time, qval);
                     if f.creation_time > qval {
                         matched.push(*q);
                     }
